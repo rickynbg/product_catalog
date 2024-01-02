@@ -1,0 +1,20 @@
+<main>
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+    <span>
+      <a mat-button extended routerLink="/"> <mat-icon>home</mat-icon> Products Catalog </a> 
+      @if (isAdmin){
+        <a mat-button routerLink="/products"> Product Manage </a>
+        <a mat-button routerLink="/users"> Users Manage </a>
+      }
+    </span>
+    <span class="spacer"></span>
+    <div *ngIf="!isAuthenticated">
+      <a mat-button routerLink="/login"> <mat-icon>login</mat-icon>  Login </a> |
+      <a mat-button routerLink="/signup"> <mat-icon>person_add</mat-icon>  Sign up </a>
+    </div>
+    <a mat-button *ngIf="isAuthenticated" (click)="logOut()"> <mat-icon>logout</mat-icon>  Logout </a>
+    <mat-icon *ngIf="isAuthenticated" >account_circle</mat-icon>
+  </mat-toolbar>
+</main>
+
+<router-outlet></router-outlet>

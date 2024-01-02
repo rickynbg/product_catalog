@@ -1,0 +1,16 @@
+.search-form {
+    min-width: 300px;
+    width: 100%;
+    padding: 10px 30px;
+}
+
+.product-list {
+    padding: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+h1{
+    margin: 0 auto;
+}

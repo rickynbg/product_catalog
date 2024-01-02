@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  fastapi:
+    container_name: api_backend
+    build:
+      context: .
+      dockerfile: api.dockerfile
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yourpasswordhere
+      POSTGRES_SERVER: localhost
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: yourdbname
+      SQLITE_DB_URL: "sqlite:///./store.db"
+      SQLITE_DB_USE: True
+      ALGORITHM: "HS256"
+      JWT_SECRET_KEY: "" 
+      JWT_REFRESH_SECRET_KEY: ""
+      ACCESS_TOKEN_EXPIRE_MINUTES: 30
+      REFRESH_TOKEN_EXPIRE_DAYS: 7
+      PROJECT_NAME: "Product List"
+      PROJECT_VERSION: "1.0.0"
+    volumes:
+      - /var/log/api:/var/log/api
+    ports:
+      - 8080:8080
+    networks:
+      - store_network
+  
+  app:
+    container_name: app_front
+    build:
+      context: .
+      dockerfile: app.dockerfile
+    ports:
+      - 80:80
+    networks:
+      - store_network
+
+networks:
+  store_network:
+    driver: bridge

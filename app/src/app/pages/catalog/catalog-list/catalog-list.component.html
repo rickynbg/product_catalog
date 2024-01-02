@@ -1,0 +1,22 @@
+
+<mat-card class="product-card">
+    <img mat-card-image [src]="prod.photo!= null ? prod.photo : '../assets/default_bw.jpg'" alt="Photo of {{prod.name}}">
+    <mat-card-header>
+        <mat-card-title>{{ prod.name }}</mat-card-title>
+        <mat-card-subtitle>{{ prod.info}} </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            {{ prod.year}} {{ prod.mark}}, {{prod.model }} {{prod.color }}
+        </p>
+        <mat-divider></mat-divider><br />
+        <mat-card-title>
+            Price R$  {{ prod.value | number:'.2' }} 
+        </mat-card-title>
+    </mat-card-content>
+    <mat-card-actions>
+        <span class="spacer"></span>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,19 @@
+<section>
+  <mat-toolbar>
+    <h1>Products Catalog</h1>
+  </mat-toolbar>
+    <form class="search-form">
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Filter by model">
+        <button matSuffix mat-icon-button aria-label="seach button">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+</section>
+<section class="product-list">
+  <app-catalog-list 
+  *ngFor="let prod of prodList"
+  [prod]="prod" >
+  </app-catalog-list>
+</section>

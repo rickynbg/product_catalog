@@ -1,0 +1,69 @@
+<div class="new-product">
+    <h1 mat-dialog-title>Create new product</h1>
+    <div mat-dialog-content >
+        <p>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="" [formControl]="name" required>
+                @if (name.invalid) {
+                    <mat-error>{{getError()}}</mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Mark</mat-label>
+                <input matInput placeholder="" [formControl]="mark" required>
+                @if (mark.invalid) {
+                    <mat-error>{{getError()}}</mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Model</mat-label>
+                <input matInput placeholder="" [formControl]="model" required>
+                @if (model.invalid) {
+                    <mat-error>{{getError()}}</mat-error>
+                }
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <mat-label>Year</mat-label>
+                <input matInput placeholder="" [formControl]="year" required>
+                @if (year.invalid) {
+                    <mat-error>{{getError()}}</mat-error>
+                }
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Info</mat-label>
+                <input matInput placeholder="" [formControl]="info" >
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Plate</mat-label>
+                <input matInput placeholder="" [formControl]="plate" >
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field>
+                <mat-label>Color</mat-label>
+                <input matInput placeholder="" [formControl]="color" >
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Value</mat-label>
+                <input matInput placeholder="" [formControl]="value" required>
+                @if (value.invalid) {
+                    <mat-error>{{getError()}}</mat-error>
+                }
+            </mat-form-field>
+            
+        </p>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-raised-button color="accent" mat-dialog-close cdkFocusInitial> Cancel </button>
+        <button mat-raised-button color="primary"> Ok </button>
+    </div>
+</div>

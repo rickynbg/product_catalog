@@ -1,0 +1,7 @@
+.product-card {
+    max-width: 250px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

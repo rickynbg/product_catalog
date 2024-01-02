@@ -1,0 +1,26 @@
+.product-table{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.product-add{
+    width: 70%;
+    display: flex;
+    justify-content:right;
+    margin: 10px auto;
+}
+
+.mat-column-value {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+h1{
+    margin: 0 auto;
+}
+
+mat-form-field{
+    margin: auto 10px;
+}
